@@ -12,6 +12,8 @@ class Soldier:
         self.city: str = city
         self.distance: int = distance
         self.assigned: bool = False
+        self.room_number = None
+        self.dorm_number = None
 
     def check_military_id(self, military_id):
         if not re.match(r"8.", military_id):
