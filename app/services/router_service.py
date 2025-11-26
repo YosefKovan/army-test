@@ -17,8 +17,8 @@ async def assign_with_csv_service(session, file, soldiers, dorms, waiting_list):
     soldiers = create_soldiers(csv_dict)
     place_soldiers(dorms=dorms, soldiers=soldiers, waiting_list=waiting_list)
 
-    add_dorms_to_database(session)
-    add_rooms_to_db(session)
+    #add_dorms_to_database(session)
+    #add_rooms_to_db(session)
     add_soldiers_to_db(session)
 
     return get_json_format(soldiers, dorms, waiting_list)
