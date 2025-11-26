@@ -41,3 +41,40 @@ class Dorm:
             amount_in_rooms += room.amount_in_room()
 
         return amount_in_rooms
+
+
+    def get_amount_of_full_rooms(self):
+
+        full_rooms = 0
+
+        for room in self.rooms:
+            if room.not_available():
+               full_rooms += 1
+
+
+        print("full rooms", full_rooms)
+        return full_rooms
+
+
+    def part_available_rooms_count(self):
+
+        part_rooms = 0
+
+        for room in self.rooms:
+            if room.room_available() and room.amount_in_room() != 0:
+                part_rooms += 1
+
+        return part_rooms
+
+
+    def empty_rooms(self):
+
+        count = 0
+        for room in self.rooms:
+            if room.amount_in_room == 0:
+                count += 0
+
+        return count
+
+
+

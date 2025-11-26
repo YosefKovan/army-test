@@ -7,7 +7,6 @@ class Dorms:
         self.dorms = self.__create_dorms(number_of_dorms, number_of_rooms, max_beds)
 
 
-
     def __create_dorms(self, number_of_dorms, number_of_rooms, max_beds):
         """this function will initialize the list of the dorms"""
         dorms_list = []
@@ -35,6 +34,23 @@ class Dorms:
 
         return amount_placed
 
+
+    def get_space(self):
+
+        empty_rooms = 0
+        part_rooms = 0
+        full_rooms = 0
+
+        for dorm in self.dorms:
+            full_rooms += dorm.get_amount_of_full_rooms()
+            part_rooms += dorm.part_available_rooms_count()
+            empty_rooms += dorm.empty_rooms()
+
+        return {
+            "part_rooms" : part_rooms,
+            "full_rooms" : full_rooms,
+            "empty_rooms" : empty_rooms
+        }
 
 
 

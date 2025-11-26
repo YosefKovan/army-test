@@ -14,10 +14,12 @@ class WaitingList:
 
         count = 0
         for soldier in soldiers:
-            if soldier.assigned == False:
+            if not soldier.assigned:
                 count += 1
                 self.not_assigned_soldiers.append(soldier)
 
     def get_amount_waiting(self):
         return len(self.not_assigned_soldiers)
 
+    def get_soldiers(self):
+        return self.not_assigned_soldiers

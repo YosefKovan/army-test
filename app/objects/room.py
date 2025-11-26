@@ -22,6 +22,11 @@ class Room:
     def room_available(self):
         return len(self.__soldiers) < self.max_beds
 
+    def not_available(self):
+        return len(self.__soldiers) >= self.max_beds
 
     def amount_in_room(self):
         return len(self.__soldiers)
+
+    def available_space(self):
+        return self.max_beds - len(self.__soldiers)
